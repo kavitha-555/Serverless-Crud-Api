@@ -1,14 +1,41 @@
-# Welcome to your CDK TypeScript project
+Serverless CRUD API with AWS CDK
+This project implements a serverless CRUD API for task management using AWS CDK, Lambda, DynamoDB, and API Gateway.
+Prerequisites
 
-This is a blank project for CDK development with TypeScript.
+Node.js (v18.20.05)
+AWS CLI configured with appropriate credentials
+AWS CDK CLI installed (npm install -g aws-cdk)
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+A) Setup Instructions
 
-## Useful commands
+1. Clone the repository:
+git clone https://github.com/kavitha-555/Serverless-Crud-Api.git
+cd serverless-crud-api-tasks
+2. Install project dependencies:
+npm install
+3. Initialize npm and install dependencies
+npm init -y
+npm install @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb
+4.Deploy the CDK stack:
+cdk deploy
+The deployment will output your API Gateway endpoint URL.
+B) API Testing
+Using curl
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+1.Create a task:
+curl -X POST -H "Content-Type: application/json" -d '{"title": "Test Task", "description": "Testing my API"}' https://he3rm6e419.execute-api.us-east-1.amazonaws.com/prod/tasks
+
+2.Get a task:
+
+curl https://https://he3rm6e419.execute-api.us-east-1.amazonaws.com/prod/tasks/{taskId}
+
+3.Update a task:
+
+curl -X PUT \
+-H "Content-Type: application/json" \
+-d '{"title": "Updated Task", "description": "Updated description"}' \
+https://https://he3rm6e419.execute-api.us-east-1.amazonaws.com/prod/tasks/{taskId}
+
+4.Delete a task:
+
+curl -X DELETE https://https://he3rm6e419.execute-api.us-east-1.amazonaws.com/prod/tasks/{taskId}
