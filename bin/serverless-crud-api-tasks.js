@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const cdk = require("aws-cdk-lib");
+const serverless_crud_api_tasks_stack_1 = require("../lib/serverless-crud-api-tasks-stack");
+const app = new cdk.App();
+new serverless_crud_api_tasks_stack_1.ServerlessCrudApiTasksStack(app, 'ServerlessCrudApiTasksStack', {
+    env: {
+        region: 'us-east-1', // Change to your desired AWS region
+    },
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2VydmVybGVzcy1jcnVkLWFwaS10YXNrcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInNlcnZlcmxlc3MtY3J1ZC1hcGktdGFza3MudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQ0EsbUNBQW1DO0FBQ25DLDRGQUFxRjtBQUVyRixNQUFNLEdBQUcsR0FBRyxJQUFJLEdBQUcsQ0FBQyxHQUFHLEVBQUUsQ0FBQztBQUMxQixJQUFJLDZEQUEyQixDQUFDLEdBQUcsRUFBRSw2QkFBNkIsRUFBRTtJQUNsRSxHQUFHLEVBQUU7UUFDSCxNQUFNLEVBQUUsV0FBVyxFQUFFLG9DQUFvQztLQUMxRDtDQUNGLENBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIiMhL3Vzci9iaW4vZW52IG5vZGVcbmltcG9ydCAqIGFzIGNkayBmcm9tICdhd3MtY2RrLWxpYic7XG5pbXBvcnQgeyBTZXJ2ZXJsZXNzQ3J1ZEFwaVRhc2tzU3RhY2sgfSBmcm9tICcuLi9saWIvc2VydmVybGVzcy1jcnVkLWFwaS10YXNrcy1zdGFjayc7XG5cbmNvbnN0IGFwcCA9IG5ldyBjZGsuQXBwKCk7XG5uZXcgU2VydmVybGVzc0NydWRBcGlUYXNrc1N0YWNrKGFwcCwgJ1NlcnZlcmxlc3NDcnVkQXBpVGFza3NTdGFjaycsIHtcbiAgZW52OiB7XG4gICAgcmVnaW9uOiAndXMtZWFzdC0xJywgLy8gQ2hhbmdlIHRvIHlvdXIgZGVzaXJlZCBBV1MgcmVnaW9uXG4gIH0sXG59KTtcblxuIl19
